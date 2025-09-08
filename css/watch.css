@@ -1,0 +1,168 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e5e5e5;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #141414;
+    border-bottom: 1px solid #e50914;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 3rem;
+    margin-right: 0.5rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e50914;
+}
+
+/* Main container for watch page */
+.watch-container {
+    padding: 2rem 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Video Player Section */
+.video-player-section {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-color: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+#video-player-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#video-player-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.loading-text {
+    font-size: 1.2rem;
+}
+
+/* Details Section */
+.details-section {
+    background-color: #1f1f1f;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+#media-title {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.meta-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+}
+
+#media-overview {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Seasons and Episodes Section */
+.seasons-section {
+    background-color: #1f1f1f;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+}
+
+.seasons-section h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #e50914;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#seasons-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.season-tab {
+    background-color: #333;
+    color: #e5e5e5;
+    border: 1px solid #444;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.season-tab.active,
+.season-tab:hover {
+    background-color: #e50914;
+    color: #fff;
+}
+
+#episodes-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+.episode-item {
+    background-color: #2a2a2a;
+    padding: 0.75rem;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 1px solid #444;
+}
+
+.episode-item.active,
+.episode-item:hover {
+    background-color: #e50914;
+    border-color: #e50914;
+}
+
+.episode-item span {
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

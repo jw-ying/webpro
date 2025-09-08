@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正在播放 - 观影网</title>
+    <link rel="stylesheet" href="css/watch.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="source/logo.png" alt="Logo">
+                <h1>观影网</h1>
+            </a>
+        </div>
+    </header>
+
+    <main class="watch-container">
+        <div class="video-player-section">
+            <div id="video-player-container">
+                <!-- 视频播放器将在这里由JS动态插入 -->
+                <p class="loading-text">正在加载播放器...</p>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <h2 id="media-title">影片标题</h2>
+            <div class="meta-info">
+                <span id="media-release-date">上映日期</span>
+                <span>|</span>
+                <span id="media-genres">类型</span>
+                <span>|</span>
+                <span id="media-rating">评分</span>
+            </div>
+            <p id="media-overview">影片简介加载中...</p>
+        </div>
+
+        <div id="seasons-section" class="seasons-section" style="display: none;">
+            <h3>剧集列表</h3>
+            <div id="seasons-tabs">
+                <!-- 季数标签将在这里由JS动态插入 -->
+            </div>
+            <div id="episodes-list">
+                <!-- 剧集列表将在这里由JS动态插入 -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/watch.js" defer></script>
+</body>
+</html>

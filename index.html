@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>观影网</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="source/logo.png" alt="Logo">
+            <h1>观影网</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="搜索">
+            <button><img src="source/search.png" alt="Search"></button>
+        </div>
+        <div class="user-actions">
+            <button><img src="source/his.png" alt="History"></button>
+            <button><img src="source/user.png" alt="Login"></button>
+            <button><img src="source/about.png" alt="About"></button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="left-sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" data-category="home">首页</a></li>
+                    <li><a href="#" data-category="movie">电影</a></li>
+                    <li><a href="#" data-category="tv">电视剧</a></li>
+                    <li><a href="#" data-category="anime">动漫</a></li>
+                    <li><a href="#" data-category="variety">综艺</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <h2 id="content-title">热门电影</h2>
+            <div class="movie-grid">
+                <!-- 内容将由JavaScript动态插入这里 -->
+            </div>
+            <div class="load-more-container">
+                <button id="load-more-btn">加载更多</button>
+            </div>
+        </main>
+        <aside class="right-sidebar">
+            <h3 id="ranking-title">电影排行榜</h3>
+            <ol id="ranking-list" class="movie-ranking">
+                <!-- 排行榜将由JavaScript动态插入这里 -->
+            </ol>
+        </aside>
+    </div>
+
+    <script src="js/script.js" defer></script>
+    
+</body>
+</html>
