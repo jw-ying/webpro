@@ -18,10 +18,22 @@
         </div>
         <div class="user-actions">
             <button><img src="source/his.png" alt="History"></button>
-            <button><img src="source/user.png" alt="Login"></button>
+            <button id="user-login-btn"><img src="source/user.png" alt="Login"></button>
             <button><img src="source/about.png" alt="About"></button>
         </div>
     </header>
+
+    <!-- 登录状态显示区块 -->
+    <div id="user-status-panel" class="user-status-panel">
+        <div class="user-info">
+            <p>未登录</p>
+        </div>
+        <div class="user-actions-buttons">
+            <button id="login-btn" class="status-btn">登录</button>
+            <button id="logout-btn" class="status-btn" style="display: none;">退出登录</button>
+            <button id="switch-account-btn" class="status-btn" style="display: none;">切换账号</button>
+        </div>
+    </div>
 
     <div class="main-container">
         <aside class="left-sidebar">
@@ -36,7 +48,38 @@
             </nav>
         </aside>
         <main class="main-content">
-            <h2 id="content-title">热门电影</h2>
+            <!-- 轮播图区域 -->
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <img src="source/carousel1.jpg" alt="Carousel 1">
+                    <div class="carousel-content">
+                        <h3>影片标题 1</h3>
+                        <p>这是影片的简短描述，您可以在这里添加任何相关信息。</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="source/carousel2.jpg" alt="Carousel 2">
+                    <div class="carousel-content">
+                        <h3>影片标题 2</h3>
+                        <p>这是影片的简短描述，您可以在这里添加任何相关信息。</p>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="source/carousel3.jpg" alt="Carousel 3">
+                    <div class="carousel-content">
+                        <h3>影片标题 3</h3>
+                        <p>这是影片的简短描述，您可以在这里添加任何相关信息。</p>
+                    </div>
+                </div>
+                <!-- 轮播图指示器 -->
+                <div class="carousel-indicators">
+                    <div class="carousel-indicator active" data-slide="0"></div>
+                    <div class="carousel-indicator" data-slide="1"></div>
+                    <div class="carousel-indicator" data-slide="2"></div>
+                </div>
+            </div>
+            
+            <h2 id="content-title">精选推荐</h2>
             <div class="movie-grid">
                 <!-- 内容将由JavaScript动态插入这里 -->
             </div>
@@ -45,12 +88,18 @@
             </div>
         </main>
         <aside class="right-sidebar">
-            <h3 id="ranking-title">电影排行榜</h3>
+            <h3 id="ranking-title">总排行榜</h3>
             <ol id="ranking-list" class="movie-ranking">
                 <!-- 排行榜将由JavaScript动态插入这里 -->
             </ol>
         </aside>
     </div>
+    
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2025 观影网. 版权所有yingq</p>
+        </div>
+    </footer>
 
     <script src="js/script.js" defer></script>
     

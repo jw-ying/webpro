@@ -12,9 +12,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 50px;
+    padding: 5px 30px;
     background-color: #141414;
     border-bottom: 1px solid #e50914;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .logo {
@@ -23,13 +28,13 @@ header {
 }
 
 .logo img {
-    height: 4rem;
+    height: 2.5rem;
     margin-right: 0.5rem;
 }
 
 .logo h1 {
     text-decoration: none;
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: bold;
     color: #e50914;
 }
@@ -37,29 +42,36 @@ header {
 .search-bar {
     display: flex;
     flex-grow: 0.5;
+    position: relative;
+    z-index: 1001; /* 确保搜索栏在其他元素之上 */
 }
 
 .search-bar input {
     width: 30%;
-    padding: 0.5rem 0.75rem;
+    padding: 0.3rem 0.5rem;
     background-color: #262626;
     border: 1px solid #262626;
-    border-radius: 1.5rem 0 0 1.5rem;
+    border-radius: 1rem 0 0 1rem;
     outline: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    color: #fff; /* 设置文字颜色为白色以便看清 */
+}
+
+.search-bar input::placeholder {
+    color: #aaa; /* 设置placeholder文字颜色 */
 }
 
 .search-bar button {
-    padding: 0.5rem 1.25rem;
+    padding: 0.3rem 0.8rem;
     border: none;
     background-color: #262626;
-    border-radius: 0 1.5rem 1.5rem 0;
+    border-radius: 0 1rem 1rem 0;
     cursor: pointer;
 }
 
 .search-bar button img {
-    height: 2rem;
-    width: 2rem;
+    height: 1.5rem;
+    width: 1.5rem;
 }
 
 .user-actions {
@@ -70,23 +82,82 @@ header {
 .user-actions button {
     background: none;
     border: none;
-    margin-left: 1rem;
+    margin-left: 0.8rem;
     cursor: pointer;
 }
 
 .user-actions button img {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 1.8rem;
+    width: 1.8rem;
+}
+
+/* 用户状态面板样式 */
+.user-status-panel {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background-color: #1f1f1f;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 15px;
+    width: 200px;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.user-status-panel.show {
+    display: block;
+}
+
+.user-info {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.user-info p {
+    margin: 0;
+    color: #e5e5e5;
+    font-size: 1rem;
+}
+
+.user-actions-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status-btn {
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.status-btn:hover {
+    background-color: #f6121d;
 }
 
 .main-container {
     display: flex;
     padding: 1rem 3rem;
+    margin-top: 60px; /* 为固定头部留出空间 */
+    padding-bottom: 80px; /* 为footer留出空间 */
 }
 
 .left-sidebar {
     width: 10%;
     margin-right: 1rem;
+    position: fixed;
+    top: 90px; /* 与头部底部对齐 */
+    left: 3rem;
+    height: calc(100vh - 140px); /* 占满剩余高度 (头部60px + footer80px) */
+    overflow-y: auto; /* 允许滚动以防内容过多 */
 }
 
 .left-sidebar nav ul {
@@ -117,6 +188,8 @@ header {
     flex-grow: 1;
     padding: 1.25rem;
     border-radius: 0.5rem;
+    margin-left: 12%; /* 为左侧栏留出空间 */
+    margin-right: 22%; /* 为右侧栏留出空间 */
 }
 
 .main-content h2 {
@@ -168,7 +241,8 @@ header {
 
 .movie-item img {
     width: 100%;
-    height: auto;
+    height: 250px; /* 固定高度以确保一致性 */
+    object-fit: cover; /* 保持比例并填充容器 */
     display: block;
     transition: transform 0.3s ease; /* Added for smooth zoom on parent hover */
 }
@@ -179,6 +253,7 @@ header {
     color: #e5e5e5;
     font-weight: normal;
     font-size: 1.1rem; /* Slightly larger font size */
+    min-height: 2.5em; /* 确保标题区域高度一致 */
 }
 
 .movie-rating {
@@ -227,6 +302,11 @@ header {
     padding: 1.5rem;
     border-radius: 0.5rem;
     border: 1px solid #333;
+    position: fixed;
+    top: 60px; /* 与头部底部对齐 */
+    right: 3rem;
+    height: calc(100vh - 140px); /* 占满剩余高度 (头部60px + footer80px) */
+    overflow-y: auto; /* 允许滚动以防内容过多 */
 }
 
 .right-sidebar h3 {
@@ -234,6 +314,10 @@ header {
     color: #e50914;
     border-bottom: 1px solid #444;
     padding-bottom: 0.5rem;
+    position: sticky;
+    top: 0;
+    background-color: #1f1f1f;
+    z-index: 100;
 }
 
 .movie-ranking {
@@ -288,4 +372,100 @@ header {
     font-weight: bold;
     color: #e50914;
     margin-left: 10px;
+}
+
+/* 轮播图样式 */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 2rem;
+    color: white;
+}
+
+.carousel-content h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+.carousel-content p {
+    margin: 0;
+    font-size: 1rem;
+    max-width: 60%;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicator.active {
+    background-color: #e50914;
+}
+
+/* Footer样式 */
+.main-footer {
+    background-color: transparent; /* 设置为透明 */
+    border-top: 1px solid #e50914;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.footer-content {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.footer-content p {
+    margin: 0;
 }

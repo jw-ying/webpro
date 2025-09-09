@@ -1,0 +1,68 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录 - 观影网</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body class="container">
+    <div class="logo">
+        <button id="logo-button" class="logo-button">
+            <img src="source/logo.png" alt="Logo">
+            <h1>观影网</h1>
+        </button>
+    </div>
+    <div class="formContainer">
+
+        <header>
+            <div class="formTab active" id="loginBtn">
+                <span>登录</span>
+            </div>
+            <div class="formTab" id="registerBtn">
+                <span>注册</span>
+            </div>
+        </header>
+
+        <!-- {/* 登入表单 */} -->
+        <form class="form active" method="post" action="/login" id="loginForm">
+            <div class="formItem">
+                <input type="email" placeholder="请输入邮箱" id="emailInput" name="email" />
+            </div>
+
+            <div class="formItem">
+                <input type="password" placeholder="请输入密码" id="passwordInput" name="password" />
+            </div>
+
+            <div class="links">
+                <a href="#">
+                    <span>忘记密码</span>
+                </a>
+            </div>
+
+            <button type="submit">
+                <span>登录</span>
+            </button>
+        </form>
+
+        <!-- {/* 注册表单 */} -->
+        <form class="form" method="post" action="/register" id="registerForm">
+            <div class="formItem">
+                <input type="email" placeholder="请输入邮箱" id="emailInput" name="email" />
+            </div>
+
+            <div class="formItem">
+                <input type="password" placeholder="请输入密码" id="passwordInput" name="password" />
+            </div>
+
+            <button type="register">
+                <span>立即注册</span>
+            </button>
+        </form>
+
+    </div>
+    <script src="js/login.js"></script>
+</body>
+
+</html>

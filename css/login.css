@@ -1,0 +1,224 @@
+body {
+    /* background: url("source/bg0.png"); */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #aaa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 表单容器 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo按钮样式 */
+.logo-button {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.logo-button img {
+    height: 4rem;
+    margin-right: 0.5rem;
+}
+
+.logo-button h1 {
+    text-decoration: none;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #e50914;
+    margin: 0;
+}
+
+/* 表单容器 */
+.formContainer {
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    background-color: #1f1f1f;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin: 1.5rem 0;
+    padding-bottom: 1.5rem;
+    border: 1px solid #333;
+}
+
+/* 表单头部 */
+.formContainer header {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+/* 表单选项卡 */
+.formTab {
+    flex: 1;
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #aaa;
+    cursor: pointer;
+    position: relative;
+}
+
+/* 表单选项卡激活字体状态 */
+.formTab.active {
+    color: #e50914;
+}
+
+/* 表单选项卡激活状态时添加下划线 */
+.formTab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    right: 40%;
+    height: 3px;
+    background-color: #e50914;
+    border-radius: 3px;
+}
+
+/* 表单项 */
+form {
+    padding: 0 1.5rem;
+}
+
+.form {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+/* 表单项活跃状态 */
+.form.active {
+    display: block;
+}
+
+/* 表单项输入框 */
+.formItem input[type="email"],
+.formItem input[type="password"] {
+    margin-bottom: 1.25rem;
+    background-color: #262626;
+    border-radius: 0.5rem;
+    border: 1px solid #333;
+    height: 3rem;
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 1rem;
+    color: #e5e5e5;
+}
+
+/* 表单项输入框 */
+.formItem input[type="text"] {
+    background-color: #262626;
+    border-radius: 0.5rem;
+    border: 1px solid #333;
+    height: 3rem;
+    width: 70%;
+    padding: 0 1rem;
+    font-size: 1rem;
+    color: #e5e5e5;
+}
+
+/* 表单项输入框覆盖 */
+.formItem input:hover {
+    outline: none;
+    box-shadow: none;
+}
+
+/* 表单项输入框聚焦状态 */
+.formItem input:focus {
+    background-color: #333;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.5);
+    border-color: #e50914;
+}
+
+/* 占位符 */
+input::placeholder {
+    color: #888;
+    opacity: 1;
+}
+
+/* 表单项标签 */
+.codeInputWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* 忘记密码链接 */
+.links {
+    text-align: right;
+    margin-bottom: 0.25rem;
+}
+
+.links a {
+    text-decoration: none;
+}
+
+.links a span {
+    color: #e50914;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.links a span:hover {
+    text-decoration: underline;
+}
+
+/* 按钮 */
+button[type="register"],
+button[type="submit"] {
+    width: 100%;
+    height: 3rem;
+    margin-top: 1rem;
+    background: #e50914;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+}
+
+button[type="register"]:hover,
+button[type="submit"]:hover {
+    background: #f6121d;
+}
+
+button[type="register"]:active,
+button[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+/* 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
