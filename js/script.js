@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const switchAccountBtn = document.getElementById('switch-account-btn'); // 切换账号按钮
     const loginIndicator = document.querySelector('.login-indicator'); // 登录状态指示器
     const userInfo = document.querySelector('.user-info p'); // 用户信息显示元素
+    const aboutBtn = document.getElementById('about-btn'); // 关于按钮
 
     // 轮播图相关元素
     const carouselSlides = document.querySelectorAll('.carousel-slide');
@@ -471,6 +472,11 @@ document.addEventListener('DOMContentLoaded', function() {
         e.stopPropagation(); // 阻止事件冒泡
         // 切换显示/隐藏用户状态面板
         userStatusPanel.classList.toggle('show');
+    });
+
+    // 关于按钮点击事件处理
+    aboutBtn.addEventListener('click', function() {
+        window.location.href = 'about.html';
     });
 
     // 点击登录按钮跳转到登录页面

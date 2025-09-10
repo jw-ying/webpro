@@ -1,0 +1,270 @@
+/* 关于页面样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #aaa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* 返回按钮 */
+.back-button-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+}
+
+.back-button {
+    background-color: #121212;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-button img {
+    height: 36px;
+    filter: invert(100%);
+}
+
+/* Header样式 */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px 20px;
+    background-color: rgba(20, 20, 20, 0.8);
+    border-bottom: 1px solid #e50914;
+    backdrop-filter: blur(10px);
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    height: 3rem;
+    margin-right: 0.5rem;
+}
+
+.logo h1 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #e50914;
+    margin: 0;
+}
+
+/* 主体内容 */
+.about-container {
+    flex: 1;
+    padding: 0 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.about-card {
+    background: linear-gradient(145deg, #1a1a1a, #1f1f1f);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.about-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(229, 9, 20, 0.3);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about-card h3 {
+    color: #e50914;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.8rem;
+    text-align: center;
+}
+
+.about-card p {
+    color: #e5e5e5;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.about-card a {
+    color: #e50914;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.about-card a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #e50914;
+    transition: width 0.3s ease;
+}
+
+.about-card a:hover {
+    color: #ff2a35;
+}
+
+.about-card a:hover::after {
+    width: 100%;
+}
+
+/* 特殊处理邮箱链接，去除下划线效果 */
+.about-card a[href^="mailto"] {
+    position: static;
+}
+
+.about-card a[href^="mailto"]::after {
+    display: none;
+}
+
+.about-card a[href^="mailto"]:hover::after {
+    width: 0;
+}
+
+/* 特殊卡片样式 */
+.intro-card {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+}
+
+.purpose-card {
+    background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+}
+
+.tech-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+}
+
+.data-card {
+    background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
+}
+
+.developer-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+}
+
+/* Footer样式 */
+.about-footer {
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto;
+    border-top: 1px solid #333;
+}
+
+.footer-content {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .about-container {
+        padding: 0 1rem 1rem;
+    }
+    
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .intro-card {
+        grid-column: span 1;
+    }
+    
+    header {
+        padding: 60px 15px 15px;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+    
+    .header-content h2 {
+        font-size: 1.25rem;
+    }
+    
+    .about-card {
+        padding: 1.5rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .back-button-container {
+        top: 15px;
+        left: 15px;
+    }
+    
+    .back-button {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .back-button img {
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        gap: 1rem;
+    }
+    
+    .about-card {
+        padding: 1.2rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .about-card p {
+        font-size: 0.95rem;
+    }
+}
