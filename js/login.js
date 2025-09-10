@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (user) {
             if (user.password === loginpassword) {
                 alert('登录成功！');
+                // 保存当前用户信息到localStorage
+                localStorage.setItem('currentUser', JSON.stringify(user));
                 window.location.href = 'index.html';
             } else {
                 alert('密码错误！');

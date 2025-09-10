@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.getElementById('login-btn'); // 登录按钮
     const logoutBtn = document.getElementById('logout-btn'); // 退出登录按钮
     const switchAccountBtn = document.getElementById('switch-account-btn'); // 切换账号按钮
+    const loginIndicator = document.querySelector('.login-indicator'); // 登录状态指示器
+    const userInfo = document.querySelector('.user-info p'); // 用户信息显示元素
 
     // 轮播图相关元素
     const carouselSlides = document.querySelectorAll('.carousel-slide');
@@ -26,6 +28,27 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentPage = 1;
     let currentCategory = 'home'; // 默认分类
     let currentSearchQuery = ''; // 当前搜索关键词
+
+    // 检查用户登录状态
+    function checkLoginStatus() {
+        const currentUser = localStorage.getItem('currentUser');
+        if (currentUser) {
+            // 用户已登录
+            const user = JSON.parse(currentUser);
+            userInfo.textContent = `已登录: ${user.email}`;
+            loginBtn.style.display = 'none';
+            logoutBtn.style.display = 'block';
+            switchAccountBtn.style.display = 'block';
+            loginIndicator.classList.add('show'); // 显示绿点
+        } else {
+            // 用户未登录
+            userInfo.textContent = '未登录';
+            loginBtn.style.display = 'block';
+            logoutBtn.style.display = 'none';
+            switchAccountBtn.style.display = 'none';
+            loginIndicator.classList.remove('show'); // 隐藏绿点
+        }
+    }
 
     // 添加国内影视剧过滤参数
     const chinaParams = '&with_original_language=zh&region=CN';
@@ -98,6 +121,71 @@ document.addEventListener('DOMContentLoaded', function() {
             showSlide(parseInt(indicator.dataset.slide));
             startCarousel(); // 重新启动自动播放
         });
+    });
+
+    // 为轮播图添加点击事件，通过标题搜索影片并跳转到观影页面
+    // 只有点击幻灯片内容区域时才会触发跳转，避免点击指示器时也触发跳转
+    document.querySelector('.carousel-container').addEventListener('click', (event) => {
+        // 检查点击的元素是否是指示器，如果是则不执行跳转
+        if (event.target.closest('.carousel-indicators')) {
+            return;
+        }
+        
+        // 查找当前active的幻灯片
+        const activeSlide = document.querySelector('.carousel-slide.active');
+        if (activeSlide) {
+            const mediaType = activeSlide.dataset.type;
+            const mediaTitle = activeSlide.dataset.title;
+            
+            if (mediaType && mediaTitle) {
+                // 显示加载提示
+                const originalHTML = activeSlide.innerHTML;
+                const loadingDiv = document.createElement('div');
+                loadingDiv.style.cssText = 'position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 18px; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 5px; z-index: 10;';
+                loadingDiv.textContent = '搜索中...';
+                activeSlide.appendChild(loadingDiv);
+                
+                // 使用TMDB API搜索影片
+                const apiKey = '54e8474294e14f56475b3af052014213';
+                const searchUrl = `https://api.themoviedb.org/3/search/${mediaType}?api_key=${apiKey}&language=zh-CN&query=${encodeURIComponent(mediaTitle)}`;
+                
+                fetch(searchUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.results && data.results.length > 0) {
+                            // 获取第一个搜索结果的ID
+                            const mediaId = data.results[0].id;
+                            window.location.href = `watch.html?type=${mediaType}&id=${mediaId}`;
+                        } else {
+                            // 如果没有找到结果，尝试使用通用搜索
+                            const multiSearchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=zh-CN&query=${encodeURIComponent(mediaTitle)}`;
+                            return fetch(multiSearchUrl)
+                                .then(response => response.json())
+                                .then(multiData => {
+                                    if (multiData.results && multiData.results.length > 0) {
+                                        const media = multiData.results[0];
+                                        const type = media.media_type || (media.title ? 'movie' : 'tv');
+                                        const id = media.id;
+                                        window.location.href = `watch.html?type=${type}&id=${id}`;
+                                    } else {
+                                        // 恢复原始内容并显示错误信息
+                                        if (activeSlide.contains(loadingDiv)) {
+                                            activeSlide.removeChild(loadingDiv);
+                                        }
+                                        alert('未找到相关影片: ' + mediaTitle);
+                                    }
+                                });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('搜索影片时出错:', error);
+                        if (activeSlide.contains(loadingDiv)) {
+                            activeSlide.removeChild(loadingDiv);
+                        }
+                        alert('搜索影片时出错，请稍后重试');
+                    });
+            }
+        }
     });
 
     // --- Helper function to create a movie item card ---
@@ -386,19 +474,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 点击退出登录按钮
     logoutBtn.addEventListener('click', function() {
-        // 隐藏退出登录和切换账号按钮
+        // 清除当前用户信息
+        localStorage.removeItem('currentUser');
+        
+        // 更新UI状态
+        userInfo.textContent = '未登录';
         logoutBtn.style.display = 'none';
         switchAccountBtn.style.display = 'none';
-        
-        // 显示登录按钮
         loginBtn.style.display = 'block';
+        loginIndicator.classList.remove('show'); // 隐藏绿点
         
-        // 更新用户信息显示
-        document.querySelector('.user-info p').textContent = '未登录';
+        // 隐藏用户状态面板
+        userStatusPanel.classList.remove('show');
     });
 
     // 点击切换账号按钮跳转到登录页面
     switchAccountBtn.addEventListener('click', function() {
+        // 清除当前用户信息
+        localStorage.removeItem('currentUser');
         window.location.href = 'login.html';
     });
 
@@ -438,4 +531,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 初始加载首页内容
     switchCategory('home');
+    
+    // 检查用户登录状态
+    checkLoginStatus();
 });
