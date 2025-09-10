@@ -124,13 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 为轮播图添加点击事件，通过标题搜索影片并跳转到观影页面
-    // 只有点击幻灯片内容区域时才会触发跳转，避免点击指示器时也触发跳转
+    // 只有当前显示的幻灯片（具有active类）才会响应点击事件
     document.querySelector('.carousel-container').addEventListener('click', (event) => {
-        // 检查点击的元素是否是指示器，如果是则不执行跳转
-        if (event.target.closest('.carousel-indicators')) {
-            return;
-        }
-        
         // 查找当前active的幻灯片
         const activeSlide = document.querySelector('.carousel-slide.active');
         if (activeSlide) {
@@ -216,6 +211,12 @@ document.addEventListener('DOMContentLoaded', function() {
         movieItem.appendChild(rating);
         movieItem.appendChild(image);
         movieItem.appendChild(title);
+        
+        // 添加延迟以实现动画效果
+        setTimeout(() => {
+            movieItem.style.animationDelay = '0s';
+        }, 0);
+        
         return movieItem;
     }
 
@@ -384,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
 
-                items.forEach(item => {
+                items.forEach((item, index) => {
                     const li = document.createElement('li');
                     const link = document.createElement('a');
                     link.href = `watch.html?type=${category === 'home' ? (item.media_type || (item.title ? 'movie' : 'tv')) : category}&id=${item.id}`; // 可以设置为详情页链接
@@ -396,6 +397,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     li.appendChild(link);
                     li.appendChild(span);
                     rankingList.appendChild(li);
+                    
+                    // 添加延迟以实现动画效果
+                    setTimeout(() => {
+                        li.style.animationDelay = `${index * 0.1}s`;
+                    }, 0);
                 });
             })
             .catch(error => {
