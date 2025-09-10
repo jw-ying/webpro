@@ -71,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (src) {
-            playerContainer.innerHTML = `<iframe src="${src}" allowfullscreen></iframe>`;
-            // playerContainer.innerHTML = `<iframe src="${src}" sandbox="allow-scripts allow-same-origin allow-fullscreen" allowfullscreen></iframe>`;
+            // playerContainer.innerHTML = `<iframe src="${src}" allowfullscreen></iframe>`;
+            playerContainer.innerHTML = `<iframe src="${src}" sandbox="allow-scripts allow-same-origin allow-fullscreen" allowfullscreen></iframe>`;
             // playerContainer.innerHTML = `<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113350730056489&bvid=BV1SyyWYKEmK&cid=26407078067&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>`;
         } else {
             playerContainer.innerHTML = `<p>无法为该类型内容加载播放器。</p>`;

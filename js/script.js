@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function startCarousel() {
         carouselInterval = setInterval(() => {
             showSlide((currentSlide + 1) % carouselSlides.length);
-        }, 5000); // 每5秒切换一次
+        }, 2000); // 每5秒切换一次
     }
 
     // 显示指定幻灯片

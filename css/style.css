@@ -365,7 +365,7 @@ header {
 }
 
 .movie-ranking li a:hover {
-    text-decoration: underline;
+    font-size: larger;
 }
 
 .movie-ranking li span {
@@ -451,7 +451,6 @@ header {
 /* Footer样式 */
 .main-footer {
     background-color: transparent; /* 设置为透明 */
-    border-top: 1px solid #e50914;
     padding: 20px 0;
     text-align: center;
     position: fixed;

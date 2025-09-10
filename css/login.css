@@ -183,9 +183,6 @@ input::placeholder {
     cursor: pointer;
 }
 
-.links a span:hover {
-    text-decoration: underline;
-}
 
 /* 按钮 */
 button[type="register"],
@@ -193,7 +190,7 @@ button[type="submit"] {
     width: 100%;
     height: 3rem;
     margin-top: 1rem;
-    background: #e50914;
+    background: linear-gradient(135deg, #411321, #f6121d);
     color: #ffffff;
     border: none;
     border-radius: 0.5rem;
@@ -204,7 +201,7 @@ button[type="submit"] {
 
 button[type="register"]:hover,
 button[type="submit"]:hover {
-    background: #f6121d;
+    background: linear-gradient(135deg, #f6121d, #411321);
 }
 
 button[type="register"]:active,
