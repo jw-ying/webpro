@@ -1,5 +1,5 @@
+/* 页面基本样式 */
 body {
-    /* background: url("source/bg0.png"); */
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #121212;
@@ -10,7 +10,7 @@ body {
     align-items: center;
 }
 
-/* 表单容器 */
+/* 页面容器样式 */
 .container {
     display: flex;
     flex-direction: column;
@@ -23,6 +23,7 @@ body {
     animation: fadeIn 1s ease;
 }
 
+/* 淡入动画 */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -32,12 +33,14 @@ body {
     }
 }
 
+/* Logo区域样式 */
 .logo {
     display: flex;
     align-items: center;
     animation: slideDown 1s ease;
 }
 
+/* Logo下滑动画 */
 @keyframes slideDown {
     from {
         transform: translateY(-50px);
@@ -60,16 +63,19 @@ body {
     transition: all 0.3s ease;
 }
 
+/* Logo按钮悬停效果 */
 .logo-button:hover {
     transform: scale(1.05);
 }
 
+/* Logo图片样式 */
 .logo-button img {
     height: 4rem;
     margin-right: 0.5rem;
     animation: pulse 2s infinite;
 }
 
+/* Logo脉冲动画 */
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -82,6 +88,7 @@ body {
     }
 }
 
+/* Logo标题样式 */
 .logo-button h1 {
     text-decoration: none;
     font-size: 1.75rem;
@@ -91,7 +98,7 @@ body {
     text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
 }
 
-/* 表单容器 */
+/* 登录表单容器样式 */
 .formContainer {
     height: auto;
     width: 100%;
@@ -109,6 +116,7 @@ body {
     animation-fill-mode: forwards;
 }
 
+/* 表单上滑动画 */
 @keyframes slideUp {
     to {
         transform: translateY(0);
@@ -116,13 +124,13 @@ body {
     }
 }
 
-/* 表单头部 */
+/* 表单头部样式 */
 .formContainer header {
     display: flex;
     margin-bottom: 1rem;
 }
 
-/* 表单选项卡 */
+/* 表单选项卡样式 */
 .formTab {
     flex: 1;
     padding: 1rem 0;
@@ -135,18 +143,19 @@ body {
     transition: all 0.3s ease;
 }
 
+/* 表单选项卡悬停效果 */
 .formTab:hover {
     color: #e5e5e5;
     background-color: rgba(229, 9, 20, 0.1);
 }
 
-/* 表单选项卡激活字体状态 */
+/* 激活状态的表单选项卡样式 */
 .formTab.active {
     color: #e50914;
     font-weight: bold;
 }
 
-/* 表单选项卡激活状态时添加下划线 */
+/* 激活状态的表单选项卡下划线 */
 .formTab.active::after {
     content: '';
     position: absolute;
@@ -159,6 +168,7 @@ body {
     animation: expandLine 0.3s ease;
 }
 
+/* 下划线展开动画 */
 @keyframes expandLine {
     from {
         left: 50%;
@@ -170,22 +180,23 @@ body {
     }
 }
 
-/* 表单项 */
+/* 表单样式 */
 form {
     padding: 0 1.5rem;
 }
 
+/* 表单默认隐藏 */
 .form {
     display: none;
     animation: fadeIn 0.5s;
 }
 
-/* 表单项活跃状态 */
+/* 激活状态的表单显示 */
 .form.active {
     display: block;
 }
 
-/* 表单项输入框 */
+/* 表单输入框样式 */
 .formItem input[type="email"],
 .formItem input[type="password"] {
     margin-bottom: 1.25rem;
@@ -200,6 +211,7 @@ form {
     transition: all 0.3s ease;
 }
 
+/* 输入框聚焦状态样式 */
 .formItem input[type="email"]:focus,
 .formItem input[type="password"]:focus {
     background-color: #333;
@@ -209,7 +221,7 @@ form {
     transform: translateY(-2px);
 }
 
-/* 表单项输入框 */
+/* 文本输入框样式 */
 .formItem input[type="text"] {
     background-color: #262626;
     border-radius: 0.5rem;
@@ -221,13 +233,13 @@ form {
     color: #e5e5e5;
 }
 
-/* 表单项输入框覆盖 */
+/* 输入框悬停状态 */
 .formItem input:hover {
     outline: none;
     box-shadow: none;
 }
 
-/* 表单项输入框聚焦状态 */
+/* 输入框聚焦状态 */
 .formItem input:focus {
     background-color: #333;
     outline: none;
@@ -235,29 +247,31 @@ form {
     border-color: #e50914;
 }
 
-/* 占位符 */
+/* 输入框占位符样式 */
 input::placeholder {
     color: #888;
     opacity: 1;
 }
 
-/* 表单项标签 */
+/* 验证码输入框容器样式 */
 .codeInputWrapper {
     display: flex;
     align-items: center;
     gap: 0.75rem;
 }
 
-/* 忘记密码链接 */
+/* 忘记密码链接样式 */
 .links {
     text-align: right;
     margin-bottom: 0.25rem;
 }
 
+/* 忘记密码链接 */
 .links a {
     text-decoration: none;
 }
 
+/* 忘记密码文字样式 */
 .links a span {
     color: #e50914;
     font-size: 0.875rem;
@@ -265,12 +279,13 @@ input::placeholder {
     transition: all 0.3s ease;
 }
 
+/* 忘记密码文字悬停效果 */
 .links a span:hover {
     color: #ff2a35;
     text-shadow: 0 0 8px rgba(229, 9, 20, 0.7);
 }
 
-/* 按钮 */
+/* 注册和登录按钮样式 */
 button[type="register"],
 button[type="submit"] {
     width: 100%;
@@ -287,6 +302,7 @@ button[type="submit"] {
     overflow: hidden;
 }
 
+/* 按钮悬停效果 */
 button[type="register"]:hover,
 button[type="submit"]:hover {
     background: linear-gradient(135deg, #f6121d, #411321);
@@ -294,6 +310,7 @@ button[type="submit"]:hover {
     box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
 }
 
+/* 按钮光泽扫过效果 */
 button[type="register"]:hover::after,
 button[type="submit"]:hover::after {
     content: '';
@@ -307,11 +324,13 @@ button[type="submit"]:hover::after {
     animation: shine 1.5s infinite;
 }
 
+/* 按钮按下效果 */
 button[type="register"]:active,
 button[type="submit"]:active {
     transform: scale(0.98);
 }
 
+/* 光泽扫过动画 */
 @keyframes shine {
     0% {
         left: -60%;
@@ -321,7 +340,7 @@ button[type="submit"]:active {
     }
 }
 
-/* 动画 */
+/* 淡入动画 */
 @keyframes fadeIn {
     from {
         opacity: 0;

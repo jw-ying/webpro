@@ -1,4 +1,5 @@
 /* 关于页面样式 */
+/* 页面基本样式设置 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,7 +12,7 @@ body {
     position: relative;
 }
 
-/* 返回按钮 */
+/* 返回按钮容器定位 */
 .back-button-container {
     position: fixed;
     top: 20px;
@@ -19,6 +20,7 @@ body {
     z-index: 1001;
 }
 
+/* 返回按钮样式 */
 .back-button {
     background-color: #121212;
     border: none;
@@ -31,12 +33,13 @@ body {
     align-items: center;
 }
 
+/* 返回按钮图标样式 */
 .back-button img {
     height: 36px;
     filter: invert(100%);
 }
 
-/* Header样式 */
+/* 页面头部样式 */
 header {
     display: flex;
     flex-direction: column;
@@ -49,17 +52,20 @@ header {
     margin-bottom: 30px;
 }
 
+/* Logo区域样式 */
 .logo {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
 }
 
+/* Logo图片样式 */
 .logo img {
     height: 3rem;
     margin-right: 0.5rem;
 }
 
+/* Logo标题样式 */
 .logo h1 {
     font-size: 1.75rem;
     font-weight: bold;
@@ -67,7 +73,7 @@ header {
     margin: 0;
 }
 
-/* 主体内容 */
+/* 主体容器样式 */
 .about-container {
     flex: 1;
     padding: 0 2rem 2rem;
@@ -76,18 +82,21 @@ header {
     width: 100%;
 }
 
+/* 内容区域样式 */
 .about-content {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
+/* 关于页面区块样式 */
 .about-section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
+/* 关于卡片样式 */
 .about-card {
     background: linear-gradient(145deg, #1a1a1a, #1f1f1f);
     border-radius: 12px;
@@ -98,17 +107,20 @@ header {
     position: relative;
 }
 
+/* 关于卡片悬停效果 */
 .about-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 30px rgba(229, 9, 20, 0.3);
 }
 
+/* 卡片图标样式 */
 .card-icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 
+/* 卡片标题样式 */
 .about-card h3 {
     color: #e50914;
     margin-top: 0;
@@ -119,6 +131,7 @@ header {
     text-align: center;
 }
 
+/* 卡片段落样式 */
 .about-card p {
     color: #e5e5e5;
     line-height: 1.7;
@@ -126,6 +139,7 @@ header {
     font-size: 1.05rem;
 }
 
+/* 卡片链接样式 */
 .about-card a {
     color: #e50914;
     text-decoration: none;
@@ -133,6 +147,7 @@ header {
     position: relative;
 }
 
+/* 卡片链接下划线效果 */
 .about-card a::after {
     content: '';
     position: absolute;
@@ -144,10 +159,12 @@ header {
     transition: width 0.3s ease;
 }
 
+/* 卡片链接悬停颜色变化 */
 .about-card a:hover {
     color: #ff2a35;
 }
 
+/* 卡片链接悬停下划线效果 */
 .about-card a:hover::after {
     width: 100%;
 }
@@ -166,28 +183,33 @@ header {
 }
 
 /* 特殊卡片样式 */
+/* 简介卡片样式 */
 .intro-card {
     grid-column: span 2;
     background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
 }
 
+/* 开发初衷卡片样式 */
 .purpose-card {
     background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
 }
 
+/* 技术架构卡片样式 */
 .tech-card {
     background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
 }
 
+/* 数据来源卡片样式 */
 .data-card {
     background: linear-gradient(135deg, #1f1f1f 0%, #2a2a2a 100%);
 }
 
+/* 开发人员卡片样式 */
 .developer-card {
     background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
 }
 
-/* Footer样式 */
+/* 页面底部样式 */
 .about-footer {
     background-color: rgba(20, 20, 20, 0.8);
     padding: 20px 0;
@@ -196,12 +218,14 @@ header {
     border-top: 1px solid #333;
 }
 
+/* 底部内容样式 */
 .footer-content {
     color: #aaa;
     font-size: 1rem;
 }
 
 /* 响应式设计 */
+/* 平板及以下屏幕样式 */
 @media (max-width: 768px) {
     .about-container {
         padding: 0 1rem 1rem;
@@ -251,6 +275,7 @@ header {
     }
 }
 
+/* 手机屏幕样式 */
 @media (max-width: 480px) {
     .about-section {
         gap: 1rem;

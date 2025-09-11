@@ -1,4 +1,4 @@
-/* General body styling */
+/* 页面基本样式 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -8,6 +8,7 @@ body {
     animation: fadeIn 0.5s ease;
 }
 
+/* 页面淡入动画 */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -17,7 +18,7 @@ body {
     }
 }
 
-/* Header styling */
+/* 页面头部样式 */
 header {
     display: flex;
     justify-content: space-between;
@@ -28,6 +29,7 @@ header {
     animation: slideDown 0.5s ease;
 }
 
+/* 头部下滑动画 */
 @keyframes slideDown {
     from {
         transform: translateY(-100%);
@@ -37,6 +39,7 @@ header {
     }
 }
 
+/* Logo链接样式 */
 .logo a {
     display: flex;
     align-items: center;
@@ -44,15 +47,18 @@ header {
     transition: all 0.3s ease;
 }
 
+/* Logo链接悬停效果 */
 .logo a:hover {
     transform: scale(1.05);
 }
 
+/* Logo图片样式 */
 .logo img {
     height: 3rem;
     margin-right: 0.5rem;
 }
 
+/* Logo标题样式 */
 .logo h1 {
     font-size: 1.5rem;
     font-weight: bold;
@@ -60,7 +66,7 @@ header {
     text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
 }
 
-/* Main container for watch page */
+/* 观影页面主容器样式 */
 .watch-container {
     padding: 2rem 4rem;
     max-width: 1400px;
@@ -68,10 +74,10 @@ header {
     animation: fadeIn 1s ease;
 }
 
-/* Video Player Section */
+/* 视频播放器区域样式 */
 .video-player-section {
     position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%; /* 16:9 宽高比 */
     background-color: #000;
     border-radius: 8px;
     overflow: hidden;
@@ -80,11 +86,13 @@ header {
     transition: all 0.3s ease;
 }
 
+/* 视频播放器区域悬停效果 */
 .video-player-section:hover {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
     transform: translateY(-5px);
 }
 
+/* 视频播放器容器样式 */
 #video-player-container {
     position: absolute;
     top: 0;
@@ -96,6 +104,7 @@ header {
     align-items: center;
 }
 
+/* 视频播放器iframe样式 */
 #video-player-container iframe {
     width: 100%;
     height: 100%;
@@ -103,12 +112,14 @@ header {
     transition: all 0.3s ease;
 }
 
+/* 加载文字样式 */
 .loading-text {
     font-size: 1.2rem;
     color: #e5e5e5;
     animation: pulse 2s infinite;
 }
 
+/* 加载文字脉冲动画 */
 @keyframes pulse {
     0% {
         opacity: 0.5;
@@ -121,7 +132,7 @@ header {
     }
 }
 
-/* Details Section */
+/* 详情区域样式 */
 .details-section {
     background-color: #1f1f1f;
     padding: 1.5rem 2rem;
@@ -134,6 +145,7 @@ header {
     animation: slideUp 0.8s forwards;
 }
 
+/* 详情区域上滑动画 */
 @keyframes slideUp {
     to {
         transform: translateY(0);
@@ -141,11 +153,13 @@ header {
     }
 }
 
+/* 详情区域悬停效果 */
 .details-section:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     transform: translateY(-5px);
 }
 
+/* 媒体标题样式 */
 #media-title {
     margin-top: 0;
     font-size: 2.5rem;
@@ -154,11 +168,13 @@ header {
     transition: all 0.3s ease;
 }
 
+/* 媒体标题悬停效果 */
 #media-title:hover {
     color: #e50914;
     text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
 }
 
+/* 媒体信息样式 */
 .meta-info {
     display: flex;
     align-items: center;
@@ -168,17 +184,19 @@ header {
     flex-wrap: wrap;
 }
 
+/* 媒体概述样式 */
 #media-overview {
     font-size: 1.1rem;
     line-height: 1.6;
     transition: all 0.3s ease;
 }
 
+/* 媒体概述悬停效果 */
 #media-overview:hover {
     color: #fff;
 }
 
-/* Seasons and Episodes Section */
+/* 季数和剧集区域样式 */
 .seasons-section {
     background-color: #1f1f1f;
     padding: 1.5rem 2rem;
@@ -190,11 +208,13 @@ header {
     animation: slideUp 1s forwards;
 }
 
+/* 季数和剧集区域悬停效果 */
 .seasons-section:hover {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
     transform: translateY(-5px);
 }
 
+/* 季数标题样式 */
 .seasons-section h3 {
     margin-top: 0;
     font-size: 1.8rem;
@@ -205,11 +225,13 @@ header {
     transition: all 0.3s ease;
 }
 
+/* 季数标题悬停效果 */
 .seasons-section h3:hover {
     color: #e50914;
     text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
 }
 
+/* 季数标签容器样式 */
 #seasons-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -217,6 +239,7 @@ header {
     margin-bottom: 1.5rem;
 }
 
+/* 季数标签样式 */
 .season-tab {
     background-color: #333;
     color: #e5e5e5;
@@ -229,6 +252,7 @@ header {
     overflow: hidden;
 }
 
+/* 季数标签光泽效果 */
 .season-tab::before {
     content: '';
     position: absolute;
@@ -240,10 +264,12 @@ header {
     transition: 0.5s;
 }
 
+/* 季数标签悬停光泽效果 */
 .season-tab:hover::before {
     left: 100%;
 }
 
+/* 激活和悬停的季数标签样式 */
 .season-tab.active,
 .season-tab:hover {
     background-color: #e50914;
@@ -252,12 +278,14 @@ header {
     box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
 }
 
+/* 剧集列表样式 */
 #episodes-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 1rem;
 }
 
+/* 剧集项样式 */
 .episode-item {
     background-color: #2a2a2a;
     padding: 0.75rem;
@@ -273,6 +301,7 @@ header {
     animation: popIn 0.5s forwards;
 }
 
+/* 剧集项弹入动画 */
 @keyframes popIn {
     to {
         opacity: 1;
@@ -280,6 +309,7 @@ header {
     }
 }
 
+/* 为剧集项设置递增动画延迟 */
 .episode-item:nth-child(1) { animation-delay: 0.1s; }
 .episode-item:nth-child(2) { animation-delay: 0.2s; }
 .episode-item:nth-child(3) { animation-delay: 0.3s; }
@@ -291,6 +321,7 @@ header {
 .episode-item:nth-child(9) { animation-delay: 0.9s; }
 .episode-item:nth-child(10) { animation-delay: 1s; }
 
+/* 剧集项光泽效果 */
 .episode-item::before {
     content: '';
     position: absolute;
@@ -302,10 +333,12 @@ header {
     transition: 0.5s;
 }
 
+/* 剧集项悬停光泽效果 */
 .episode-item:hover::before {
     left: 100%;
 }
 
+/* 激活和悬停的剧集项样式 */
 .episode-item.active,
 .episode-item:hover {
     background-color: #e50914;
@@ -314,6 +347,7 @@ header {
     box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
 }
 
+/* 剧集项文字样式 */
 .episode-item span {
     display: block;
     font-size: 0.9rem;
