@@ -292,4 +292,69 @@ header {
     .about-card p {
         font-size: 0.95rem;
     }
+    
+    /* 新增：进一步优化移动端显示 */
+    .back-button-container {
+        top: 10px;
+        left: 10px;
+    }
+    
+    .back-button {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .back-button img {
+        height: 16px;
+    }
+    
+    header {
+        padding: 50px 10px 10px;
+    }
+    
+    .logo img {
+        height: 2.5rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .about-container {
+        padding: 0 0.5rem 0.5rem;
+    }
+    
+    .about-section {
+        gap: 0.8rem;
+    }
+    
+    .about-card {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+    
+    .card-icon {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .about-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .about-card p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 0.8rem;
+    }
+    
+    .about-footer {
+        padding: 15px 0;
+    }
+    
+    .footer-content {
+        font-size: 0.9rem;
+    }
 }

@@ -922,4 +922,105 @@ header {
         width: 10px;
         height: 10px;
     }
+    
+    /* 新增：进一步优化移动端显示 */
+    .main-container {
+        padding: 0.5rem;
+    }
+    
+    .left-sidebar {
+        margin-bottom: 0.5rem;
+    }
+    
+    .left-sidebar nav ul li a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.5rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .main-content {
+        padding: 0.5rem 0;
+    }
+    
+    .home-section-title {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 0.5rem;
+    }
+    
+    .movie-item img {
+        height: 130px;
+    }
+    
+    .movie-item h4 {
+        font-size: 0.75rem;
+        margin: 0.3rem 0;
+        padding: 0 0.3rem;
+    }
+    
+    .movie-rating {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        top: 5px;
+        left: 5px;
+    }
+    
+    .right-sidebar {
+        padding: 0.8rem;
+    }
+    
+    .right-sidebar h3 {
+        font-size: 1.2rem;
+        padding-bottom: 0.3rem;
+    }
+    
+    .movie-ranking li {
+        padding: 0.3rem 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .movie-ranking li::before {
+        font-size: 0.9rem;
+        padding: 1px 6px;
+        margin-right: 8px;
+    }
+    
+    .movie-ranking li a {
+        font-size: 0.9rem;
+    }
+    
+    .movie-ranking li span {
+        font-size: 0.9rem;
+        margin-left: 5px;
+    }
+    
+    .carousel-container {
+        height: 200px;
+        margin-bottom: 1rem;
+    }
+    
+    .carousel-content {
+        padding: 0.8rem;
+    }
+    
+    .carousel-content h3 {
+        font-size: 1.3rem;
+        margin: 0 0 0.3rem 0;
+    }
+    
+    .carousel-content p {
+        font-size: 0.8rem;
+        max-width: 90%;
+    }
+    
+    #load-more-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
 }

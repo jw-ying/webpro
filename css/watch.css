@@ -487,4 +487,65 @@ header {
     .episode-item span {
         font-size: 0.7rem;
     }
+    
+    /* 新增：进一步优化移动端显示 */
+    .watch-container {
+        padding: 0.3rem;
+    }
+    
+    #media-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .meta-info {
+        font-size: 0.7rem;
+        gap: 0.5rem;
+    }
+    
+    #media-overview {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+    
+    .video-player-section {
+        border-radius: 5px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .details-section {
+        padding: 0.8rem;
+        border-radius: 5px;
+        margin-bottom: 0.8rem;
+    }
+    
+    .seasons-section {
+        padding: 0.8rem;
+        border-radius: 5px;
+    }
+    
+    .seasons-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .season-tab {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+        border-radius: 15px;
+    }
+    
+    #episodes-list {
+        grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+        gap: 0.4rem;
+    }
+    
+    .episode-item {
+        padding: 0.3rem;
+        border-radius: 4px;
+    }
+    
+    .episode-item span {
+        font-size: 0.65rem;
+    }
 }

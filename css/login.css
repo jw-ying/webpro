@@ -391,6 +391,7 @@ button[type="submit"]:active {
     .formContainer {
         margin: 0.5rem 0;
         padding-bottom: 1rem;
+        border-radius: 8px;
     }
     
     .formTab {
@@ -408,6 +409,7 @@ button[type="submit"]:active {
         padding: 0 0.6rem;
         font-size: 0.8rem;
         margin-bottom: 1rem;
+        border-radius: 0.4rem;
     }
     
     .links {
@@ -423,6 +425,64 @@ button[type="submit"]:active {
         height: 2.2rem;
         font-size: 0.8rem;
         margin-top: 0.8rem;
+        border-radius: 0.4rem;
+    }
+    
+    /* 新增：进一步优化移动端显示 */
+    body {
+        padding: 5px 0;
+    }
+    
+    .container {
+        margin: 0 5px;
+    }
+    
+    .logo {
+        margin-top: 10px;
+    }
+    
+    .logo-button img {
+        height: 2rem;
+    }
+    
+    .logo-button h1 {
+        font-size: 1rem;
+    }
+    
+    .formContainer {
+        margin: 0.3rem 0;
+        padding-bottom: 0.8rem;
+        border-radius: 6px;
+    }
+    
+    .formTab {
+        padding: 0.6rem 0;
+        font-size: 0.75rem;
+    }
+    
+    form {
+        padding: 0 0.8rem;
+    }
+    
+    .formItem input[type="email"],
+    .formItem input[type="password"] {
+        height: 2rem;
+        padding: 0 0.5rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.8rem;
+        border-radius: 0.3rem;
+    }
+    
+    .links a span {
+        font-size: 0.7rem;
+    }
+    
+    button[type="register"],
+    button[type="submit"] {
+        height: 2rem;
+        font-size: 0.75rem;
+        margin-top: 0.6rem;
+        border-radius: 0.3rem;
     }
 }
 
