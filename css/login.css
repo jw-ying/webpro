@@ -330,6 +330,102 @@ button[type="submit"]:active {
     transform: scale(0.98);
 }
 
+/* 响应式设计 */
+/* 平板样式 */
+@media (max-width: 768px) {
+    body {
+        height: auto;
+        padding: 20px 0;
+    }
+    
+    .container {
+        margin: 0 15px;
+        max-width: none;
+    }
+    
+    .logo-button img {
+        height: 3rem;
+    }
+    
+    .logo-button h1 {
+        font-size: 1.5rem;
+    }
+    
+    .formContainer {
+        max-width: none;
+        margin: 1rem 0;
+    }
+    
+    .formItem input[type="email"],
+    .formItem input[type="password"] {
+        height: 2.5rem;
+        padding: 0 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    button[type="register"],
+    button[type="submit"] {
+        height: 2.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* 手机样式 */
+@media (max-width: 480px) {
+    body {
+        padding: 10px 0;
+    }
+    
+    .container {
+        margin: 0 10px;
+    }
+    
+    .logo-button img {
+        height: 2.5rem;
+    }
+    
+    .logo-button h1 {
+        font-size: 1.2rem;
+    }
+    
+    .formContainer {
+        margin: 0.5rem 0;
+        padding-bottom: 1rem;
+    }
+    
+    .formTab {
+        padding: 0.8rem 0;
+        font-size: 0.8rem;
+    }
+    
+    form {
+        padding: 0 1rem;
+    }
+    
+    .formItem input[type="email"],
+    .formItem input[type="password"] {
+        height: 2.2rem;
+        padding: 0 0.6rem;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .links {
+        margin-bottom: 0;
+    }
+    
+    .links a span {
+        font-size: 0.75rem;
+    }
+    
+    button[type="register"],
+    button[type="submit"] {
+        height: 2.2rem;
+        font-size: 0.8rem;
+        margin-top: 0.8rem;
+    }
+}
+
 /* 光泽扫过动画 */
 @keyframes shine {
     0% {

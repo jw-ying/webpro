@@ -724,3 +724,202 @@ header {
 .footer-content p {
     margin: 0;
 }
+
+/* 响应式设计 */
+/* 平板样式 */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 15px;
+        height: 60px;
+    }
+    
+    .search-bar input {
+        width: 100%;
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+    }
+    
+    .search-bar button {
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .search-bar button img {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+    
+    .user-actions button img {
+        height: 2rem;
+        width: 2rem;
+    }
+    
+    .main-container {
+        padding: 1rem;
+        margin-top: 70px;
+        flex-direction: column;
+    }
+    
+    .left-sidebar {
+        width: 100%;
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        overflow-y: visible;
+    }
+    
+    .left-sidebar nav ul li a {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .main-content {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 1rem 0;
+    }
+    
+    .main-content h2 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .home-section-title {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+    
+    .movie-item img {
+        height: 200px;
+    }
+    
+    .movie-item h4 {
+        font-size: 0.9rem;
+    }
+    
+    .right-sidebar {
+        width: 100%;
+        position: relative;
+        top: auto;
+        right: auto;
+        height: auto;
+        margin-left: 0;
+        margin-top: 1rem;
+        padding: 1rem;
+    }
+    
+    .right-sidebar h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .carousel-container {
+        height: 300px;
+    }
+    
+    .carousel-content {
+        padding: 1.5rem;
+    }
+    
+    .carousel-content h3 {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-content p {
+        font-size: 1rem;
+        max-width: 80%;
+    }
+    
+    .main-footer {
+        position: relative;
+        padding: 15px 0;
+    }
+}
+
+/* 手机样式 */
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+        height: 50px;
+    }
+    
+    .logo img {
+        height: 2.5rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .search-bar input {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+    
+    .user-actions button img {
+        height: 1.8rem;
+        width: 1.8rem;
+    }
+    
+    .left-sidebar nav ul li a {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .movie-item img {
+        height: 160px;
+    }
+    
+    .movie-item h4 {
+        font-size: 0.8rem;
+        margin: 0.5rem 0;
+    }
+    
+    .movie-rating {
+        font-size: 0.7rem;
+        padding: 3px 6px;
+    }
+    
+    #load-more-btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    
+    .carousel-container {
+        height: 250px;
+    }
+    
+    .carousel-content {
+        padding: 1rem;
+    }
+    
+    .carousel-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .carousel-content p {
+        font-size: 0.9rem;
+    }
+    
+    .carousel-indicators {
+        bottom: 10px;
+    }
+    
+    .carousel-indicator {
+        width: 10px;
+        height: 10px;
+    }
+}

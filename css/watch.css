@@ -355,3 +355,136 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
+/* 响应式设计 */
+/* 平板样式 */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+    
+    .logo img {
+        height: 2.5rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .watch-container {
+        padding: 1rem;
+    }
+    
+    #media-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .meta-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    #media-overview {
+        font-size: 1rem;
+    }
+    
+    .seasons-section h3 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    #seasons-tabs {
+        justify-content: center;
+    }
+    
+    .season-tab {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    #episodes-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .episode-item {
+        padding: 0.5rem;
+    }
+    
+    .episode-item span {
+        font-size: 0.8rem;
+    }
+}
+
+/* 手机样式 */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+    }
+    
+    .logo img {
+        height: 2rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .watch-container {
+        padding: 0.5rem;
+    }
+    
+    #media-title {
+        font-size: 1.6rem;
+    }
+    
+    .meta-info {
+        font-size: 0.8rem;
+    }
+    
+    #media-overview {
+        font-size: 0.9rem;
+    }
+    
+    .video-player-section {
+        margin-bottom: 1rem;
+    }
+    
+    .details-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .seasons-section {
+        padding: 1rem;
+    }
+    
+    .seasons-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    #seasons-tabs {
+        gap: 0.3rem;
+    }
+    
+    .season-tab {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    
+    #episodes-list {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 0.5rem;
+    }
+    
+    .episode-item {
+        padding: 0.4rem;
+    }
+    
+    .episode-item span {
+        font-size: 0.7rem;
+    }
+}
